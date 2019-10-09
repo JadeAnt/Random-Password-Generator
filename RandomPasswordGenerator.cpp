@@ -1,9 +1,29 @@
 #include <iostream>
 #include <stdlib.h>
 #include <string>
+#include <time.h>
 #include <fstream>
 
 using namespace std;
+
+void FindPassword() {
+	ifstream out;
+	string find, looking, found;
+
+	out.open("SavedPasswords.txt");
+
+	cout << "What password are you looking for: "; cin >> looking;
+
+	while (out >> find) {
+		if (find == looking) {
+			
+			out >> found;
+		}
+	}
+
+	cout << "Found password for " << looking << " : " << found << endl;
+	out.close();
+}
 
 int main(){
 
@@ -13,6 +33,7 @@ int main(){
 	int upper_finder, lower_finder, special_finder, number_finder;
 
 	output.open("SavedPasswords.txt");
+	output << "Purpose   |   Password" << endl;
 
 	cout << "=============================\n"
 		<< "WELCOME TO PASSWORD GENERATOR\n"
@@ -20,8 +41,9 @@ int main(){
 		<< "=============================" << endl;
 
 	cout << "Do you want a new password to be generated? (y - continue/n - exit)"; cin >> n;
-	
-	srand(rand());
+
+	srand(time(NULL));
+
 	while (n != 'n') {
 
 		Final_password = "";
@@ -76,15 +98,22 @@ int main(){
 		cout << "Would you like to save this password for future use?: (y - save/n - no)"; cin >> in;
 		if (in == 'y') {
 			cout << "What is this password for?: "; cin >> purpose;
-			output << purpose << " Password: " << Final_password << endl;
+			output << purpose << "     " << Final_password << endl;
 		}
 
 		cout << "\n Do you want a new password to be generated? (y - continue/n - exit) "; cin >> n;
+
+	}
+
+	while (n != 'o') {
+
+		cout << "\nWould you like to find a Saved Password you generated? (f - yes/ o - exit): "; cin >> n;
+		if (n == 'f') {
+			FindPassword();
+		}
 	}
 
 	output.close();
 	system("pause");
 	return 0;
 }
-
-
