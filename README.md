@@ -10,3 +10,6 @@
 
 
 ## How to Run
+This program runs in console. To run it and get your randomly generated passwords, download the code and run using terminal.
+![Random Password Generator image](/images/logo.png)
+Format: ![Alt Text](url)
