@@ -13,5 +13,5 @@ Built in C++ and Visual Studio
 ## How to Run
 This program runs in console. To run it and get your randomly generated passwords, download the code and run using terminal.
 
-![Random Password Generator image](/images/logo.png)
+![Random Password Generator image](Password Generator.JPG)
 Format: ![Alt Text](url)
