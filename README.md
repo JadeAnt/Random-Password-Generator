@@ -1,7 +1,8 @@
 # Random-Password-Generator
 Built in C++ and Visual Studio
 
-Note: Also, see my Random Password Generator webapp built using HTML, CSS, and Javascript here:
+Note: Also, see my Random Password Generator webapp built using HTML, CSS, and Javascript here
+
 https://github.com/JadeAnt/Password-Generator-Webapp/blob/master/README.md
 
 ## Description
